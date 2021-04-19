@@ -18,9 +18,9 @@ public class Person {
     }
 
     public Person setGeburtsdatum(Datum geburtsdatum) {
-        if (this.geburtsdatum != null) {
+
             this.geburtsdatum = geburtsdatum;
-        }
+
         return this;
 
     }

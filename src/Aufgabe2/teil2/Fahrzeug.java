@@ -11,7 +11,85 @@ public class Fahrzeug {
     Fahrzeughalter halter;
     Fahrer fahrer;
 
-    Fahrzeug(String hersteller, String modell, Integer gesamtgewicht, Integer baujahr, Integer hoechstgeschwindigkeit, Motor motor, Fahrzeughalter halter, Fahrer fahrer) {
-
+    public Fahrzeug(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer) {
+        setHersteller(hersteller).setModell(modell).setGesamtgewicht(gesamtgewicht).setBaujahr(baujahr).setHoechstgeschwindigkeit(hoechstgeschwindigkeit).setMotor(motor).setHalter(halter).setFahrer(fahrer);
     }
+
+    public String getHersteller() {
+        return hersteller;
+    }
+
+    private Fahrzeug setHersteller(String hersteller) {
+        this.hersteller = hersteller;
+        return this;
+    }
+
+    public String getModell() {
+        return modell;
+    }
+
+    private Fahrzeug setModell(String modell) {
+        this.modell = modell;
+        return this;
+    }
+
+    public Integer getGesamtgewicht() {
+        return gesamtgewicht;
+    }
+
+    private Fahrzeug setGesamtgewicht(Integer gesamtgewicht) {
+        this.gesamtgewicht = gesamtgewicht;
+        return this;
+    }
+
+    public Integer getBaujahr() {
+        return baujahr;
+    }
+
+    private Fahrzeug setBaujahr(Integer baujahr) {
+        this.baujahr = baujahr;
+        return this;
+    }
+
+    public Integer getHoechstgeschwindigkeit() {
+        return hoechstgeschwindigkeit;
+    }
+
+    private Fahrzeug setHoechstgeschwindigkeit(Integer hoechstgeschwindigkeit) {
+        this.hoechstgeschwindigkeit = hoechstgeschwindigkeit;
+        return this;
+    }
+
+    public Motor getMotor() {
+        return motor;
+    }
+
+    public Fahrzeug setMotor(Motor motor) {
+        this.motor = motor;
+        return this;
+    }
+
+    public Fahrzeughalter getHalter() {
+        return halter;
+    }
+
+    public Fahrzeug setHalter(Fahrzeughalter halter) {
+        this.halter = halter;
+        return this;
+    }
+
+    public boolean hatHalter() {
+        return getHalter() == null;
+    }
+
+    public Fahrer getFahrer() {
+        return fahrer;
+    }
+
+    public Fahrzeug setFahrer(Fahrer fahrer) {
+        this.fahrer = fahrer;
+        return this;
+    }
+
+
 }

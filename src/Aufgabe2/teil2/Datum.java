@@ -17,7 +17,7 @@ public class Datum {
 
     @Override
     public String toString() {
-        return "Geburtsdatum: " + tag + "." + monat + "." + jahr;
+        return "geb.: " + tag + "." + monat + "." + jahr;
     }
 
     @Override

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 
-import de.petersen.nico.datum.*;
+
 
 class DatumTest {
 
@@ -31,18 +31,18 @@ class DatumTest {
 		assertEquals(1, monatZuKlein.getMonat());
 		assertEquals(28, zuGrossFebruar.getTag());
 		assertEquals(29, schaltjahr.getTag());
-		assertEquals(true, birthday.isBirthday());
-		assertEquals(true, birthday.isHoliday());
-		assertEquals(true, pfingstSo21.isPentecost());
-		assertEquals(true, pfingstMo21.isPentecost());
-		assertEquals(true, himmel21.isAscension());
-		assertEquals(true, pfingstMo21.isHoliday());
-		assertEquals(true, himmel21.isHoliday());
-		assertEquals(true, osterSo24.isEaster());
-		assertEquals(true, osterSo27.isEaster());
-		assertEquals(true, pfingstSo27.isPentecost());
-		assertEquals(false, pfingstSo27.isAscension());
-		assertEquals(true, karfreitag21.isHoliday());
+		assertTrue(birthday.isBirthday());
+		assertTrue(birthday.isHoliday());
+		assertTrue(pfingstSo21.isPentecost());
+		assertTrue(pfingstMo21.isPentecost());
+		assertTrue(himmel21.isAscension());
+		assertTrue(pfingstMo21.isHoliday());
+		assertTrue(himmel21.isHoliday());
+		assertTrue(osterSo24.isEaster());
+		assertTrue(osterSo27.isEaster());
+		assertTrue(pfingstSo27.isPentecost());
+		assertFalse(pfingstSo27.isAscension());
+		assertTrue(karfreitag21.isHoliday());
 		assertFalse(karfreitag21.isAscension());
 		assertTrue(pfingstSo24.isPentecost());
 		assertFalse(pfingstSo24.isBirthday());

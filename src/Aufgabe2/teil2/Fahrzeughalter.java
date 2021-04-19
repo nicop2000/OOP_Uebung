@@ -6,5 +6,8 @@ public class Fahrzeughalter extends Person {
         super(vorname, nachname, geburtsdatum);
     }
 
-
+    @Override
+    public String toString() {
+        return "Fahrzeughalter: " + getVorname() + " " + getName() + ", " + getGeburtsdatum().toString();
+    }
 }
