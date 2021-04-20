@@ -2,9 +2,20 @@ package Aufgabe2.teil2;
 
 public class Fahrer extends Person {
 
+    private boolean organDonor;
 
-    Fahrer(String vorname, String nachname, Datum geburtsdatum) {
+    Fahrer(final String vorname, final String nachname, final Datum geburtsdatum, final boolean organDonor) {
         super(vorname, nachname, geburtsdatum);
+        setOrganDonor(organDonor);
+    }
+
+    public boolean isOrganDonor() {
+        return organDonor;
+    }
+
+    public Fahrer setOrganDonor(final boolean organDonor) {
+        this.organDonor = organDonor;
+        return this;
     }
 
     @Override

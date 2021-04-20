@@ -19,7 +19,7 @@ public class Fahrzeug {
         return hersteller;
     }
 
-    private Fahrzeug setHersteller(String hersteller) {
+    private Fahrzeug setHersteller(final String hersteller) {
         this.hersteller = hersteller;
         return this;
     }
@@ -28,7 +28,7 @@ public class Fahrzeug {
         return modell;
     }
 
-    private Fahrzeug setModell(String modell) {
+    private Fahrzeug setModell(final String modell) {
         this.modell = modell;
         return this;
     }
@@ -37,7 +37,7 @@ public class Fahrzeug {
         return gesamtgewicht;
     }
 
-    private Fahrzeug setGesamtgewicht(Integer gesamtgewicht) {
+    private Fahrzeug setGesamtgewicht(final Integer gesamtgewicht) {
         this.gesamtgewicht = gesamtgewicht;
         return this;
     }
@@ -46,7 +46,7 @@ public class Fahrzeug {
         return baujahr;
     }
 
-    private Fahrzeug setBaujahr(Integer baujahr) {
+    private Fahrzeug setBaujahr(final Integer baujahr) {
         this.baujahr = baujahr;
         return this;
     }
@@ -55,7 +55,7 @@ public class Fahrzeug {
         return hoechstgeschwindigkeit;
     }
 
-    private Fahrzeug setHoechstgeschwindigkeit(Integer hoechstgeschwindigkeit) {
+    private Fahrzeug setHoechstgeschwindigkeit(final Integer hoechstgeschwindigkeit) {
         this.hoechstgeschwindigkeit = hoechstgeschwindigkeit;
         return this;
     }
@@ -64,7 +64,7 @@ public class Fahrzeug {
         return motor;
     }
 
-    public Fahrzeug setMotor(Motor motor) {
+    public Fahrzeug setMotor(final Motor motor) {
         this.motor = motor;
         return this;
     }
@@ -73,7 +73,7 @@ public class Fahrzeug {
         return halter;
     }
 
-    public Fahrzeug setHalter(Fahrzeughalter halter) {
+    public Fahrzeug setHalter(final Fahrzeughalter halter) {
         this.halter = halter;
         return this;
     }
@@ -86,7 +86,7 @@ public class Fahrzeug {
         return fahrer;
     }
 
-    public Fahrzeug setFahrer(Fahrer fahrer) {
+    public Fahrzeug setFahrer(final Fahrer fahrer) {
         this.fahrer = fahrer;
         return this;
     }

@@ -1,8 +1,8 @@
 package Aufgabe2.teil2;
 
-public class Panzer extends Fahrzeug{
+public class Panzer extends Fahrzeug {
 
-    public Panzer(String hersteller, String modell, Integer gesamtgewicht, Integer baujahr, Integer hoechstgeschwindigkeit, Motor motor, Fahrzeughalter halter, Fahrer fahrer) {
+    public Panzer(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer) {
         super(hersteller, modell, gesamtgewicht, baujahr, hoechstgeschwindigkeit, motor, halter, fahrer);
     }
 

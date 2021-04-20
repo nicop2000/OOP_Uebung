@@ -1,8 +1,23 @@
 package Aufgabe2.teil2;
 
-public class LKW extends Fahrzeug{
-    public LKW(String hersteller, String modell, Integer gesamtgewicht, Integer baujahr, Integer hoechstgeschwindigkeit, Motor motor, Fahrzeughalter halter, Fahrer fahrer) {
+import java.util.List;
+
+public class LKW extends Fahrzeug {
+
+    List<String> ladung;
+
+    public LKW(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer, final List<String> ladung) {
         super(hersteller, modell, gesamtgewicht, baujahr, hoechstgeschwindigkeit, motor, halter, fahrer);
+        setLadung(ladung);
+    }
+
+    public List<String> getLadung() {
+        return ladung;
+    }
+
+    public LKW setLadung(final List<String> ladung) {
+        this.ladung = ladung;
+        return this;
     }
 
     @Override

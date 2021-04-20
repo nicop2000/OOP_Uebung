@@ -16,7 +16,7 @@ public class Motor {
         return hubraum;
     }
 
-    public Motor setHubraum(Integer hubraum) {
+    public Motor setHubraum(final Integer hubraum) {
         this.hubraum = hubraum;
         return this;
     }
@@ -25,7 +25,7 @@ public class Motor {
         return zyliner;
     }
 
-    public Motor setZyliner(Integer zyliner) {
+    public Motor setZyliner(final Integer zyliner) {
         this.zyliner = zyliner;
         return this;
     }
@@ -34,7 +34,7 @@ public class Motor {
         return leistung;
     }
 
-    public Motor setLeistung(Integer leistung) {
+    public Motor setLeistung(final Integer leistung) {
         this.leistung = leistung;
         return this;
     }
@@ -43,7 +43,7 @@ public class Motor {
         return treibstoff.toString();
     }
 
-    public Motor setTreibstoff(Treibstoff treibstoff) {
+    public Motor setTreibstoff(final Treibstoff treibstoff) {
         this.treibstoff = treibstoff;
         return this;
     }
@@ -52,13 +52,13 @@ public class Motor {
         return gewicht;
     }
 
-    public Motor setGewicht(Integer gewicht) {
+    public Motor setGewicht(final Integer gewicht) {
         this.gewicht = gewicht;
         return this;
     }
 
     @Override
     public String toString() {
-        return "Motor: " + getHubraum() + "ccm, " + getZyliner() + " Zylinder, " + getLeistung() + " PS, " + getTreibstoff() + ", " + getGewicht() + "kg";
+        return "Motor: " + getHubraum() + "ccm, " + getZyliner() + " Zylinder, " + getLeistung() + " PS, " + "Treibstoff: " + getTreibstoff() + ", " + getGewicht() + "kg";
     }
 }
