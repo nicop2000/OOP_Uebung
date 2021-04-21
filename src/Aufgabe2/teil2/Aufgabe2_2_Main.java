@@ -18,6 +18,7 @@ public class Aufgabe2_2_Main {
         System.out.println("The wheels on the bus go: " + linie45.howDoTheWheelsGo());
         System.out.print("\n\n\n");
 
+
         Motorrad drogenSchmuggler = new Motorrad("Suzuki", "KSX3", 459, 2019, 170, new Motor(1246, 5, 80, Treibstoff.ELEKTRO, 200), halter, fahrer, 75);
         System.out.println(drogenSchmuggler.toString());
 
