@@ -7,7 +7,7 @@ public class Aufgabe2_2_Main {
         Fahrzeughalter halter = new Fahrzeughalter("Carlotta", "Kornemann", new Datum(4, 1, 2002));
         Fahrer fahrer = new Fahrer("Nico", "Petersen", new Datum(7, 12, 2000), true);
 
-        Panzer tigerpanzer = new Panzer("Porsche", "Tigerpanzer", 12539, 2020, 35, new Motor(3000, 12, 1500, Treibstoff.DIESEL, 2300), halter, fahrer);
+        Panzer tigerpanzer = new Panzer("Porsche", "Tigerpanzer", 12539, 2020, 35, new Motor(3000, 12, 1500, Treibstoff.DIESEL, 2300), halter, fahrer, "deutsch");
         System.out.println(tigerpanzer);
 
         System.out.print("\n\n\n");
@@ -15,7 +15,7 @@ public class Aufgabe2_2_Main {
         Bus linie45 = new Bus("MAN", "Gross", 5679, 2021, 90, new Motor(2000, 8, 245, Treibstoff.KOELSCH, 1200), halter, fahrer);
         System.out.println(linie45.toString());
         System.out.print("\n");
-        System.out.println("The wheels on the bus go: " + linie45.howDoTheWheelsGo());
+        System.out.println("The wheels on the bus go: " + linie45.theWheelsOnTheBusGo());
         System.out.print("\n\n\n");
 
 

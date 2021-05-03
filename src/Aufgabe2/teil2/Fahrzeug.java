@@ -1,6 +1,6 @@
 package Aufgabe2.teil2;
 
-public class Fahrzeug {
+public abstract class  Fahrzeug {
 
     String hersteller;
     String modell;
@@ -11,7 +11,7 @@ public class Fahrzeug {
     Fahrzeughalter halter;
     Fahrer fahrer;
 
-    public Fahrzeug(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer) {
+    protected Fahrzeug(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer) {
         setHersteller(hersteller).setModell(modell).setGesamtgewicht(gesamtgewicht).setBaujahr(baujahr).setHoechstgeschwindigkeit(hoechstgeschwindigkeit).setMotor(motor).setHalter(halter).setFahrer(fahrer);
     }
 

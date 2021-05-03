@@ -1,8 +1,20 @@
 package Aufgabe2.teil2;
 
 public class PKW extends Fahrzeug {
-    public PKW(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer) {
+
+    private boolean tuev;
+    public PKW(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer, final boolean tuev) {
         super(hersteller, modell, gesamtgewicht, baujahr, hoechstgeschwindigkeit, motor, halter, fahrer);
+        this.setTuev(tuev);
+    }
+
+    public boolean hatTuev() {
+        return tuev;
+    }
+
+    public PKW setTuev(boolean tuev) {
+        this.tuev = tuev;
+        return this;
     }
 
     @Override

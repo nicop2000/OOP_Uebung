@@ -2,8 +2,20 @@ package Aufgabe2.teil2;
 
 public class Panzer extends Fahrzeug {
 
-    public Panzer(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer) {
+    String nation;
+
+    public Panzer(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer, final String nation) {
         super(hersteller, modell, gesamtgewicht, baujahr, hoechstgeschwindigkeit, motor, halter, fahrer);
+        this.setNation(nation);
+    }
+
+    public String getNation() {
+        return nation;
+    }
+
+    public Panzer setNation(String nation) {
+        this.nation = nation;
+        return this;
     }
 
     @Override

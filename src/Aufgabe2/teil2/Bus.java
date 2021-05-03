@@ -7,7 +7,7 @@ public class Bus extends Fahrzeug {
         super(hersteller, modell, gesamtgewicht, baujahr, hoechstgeschwindigkeit, motor, halter, fahrer);
     }
 
-    public String howDoTheWheelsGo() {
+    public String theWheelsOnTheBusGo() {
         return "Round and round, round and round";
     }
 

@@ -15,10 +15,10 @@ public class Person {
 	private Boolean lebend = true;
 	private Adresse anschrift;
 	private Datum wohnortSeit;
-	private final HashMap<Datum, Adresse> adressHistorie = new HashMap<Datum, Adresse>();
+	private final HashMap<Datum, Adresse> adressHistorie = new HashMap<>();
 	private final Person[] eltern = new Person[2];
 	private final Person[] grosseltern = new Person[4];
-	private final ArrayList<Person> kinder = new ArrayList<Person>();
+	private final ArrayList<Person> kinder = new ArrayList<>();
 	
 	
 	public Person(Integer id, Integer gewicht, Integer laune, Integer gesundheit, String vorname, String name, Datum geburtsdatum, Boolean lebend, Adresse anschrift, Datum wohnortSeit) {
