@@ -35,6 +35,17 @@ public class Person {
 		return this;
 	}
 
+	public ArrayList<Person> getEnkel() {
+		ArrayList<Person> enkel = new ArrayList<>();
+		if (getKinder().size() > 0) {
+			for(Person kind : getKinder()) {
+				enkel.addAll(kind.getKinder());
+			}
+		}
+		return enkel;
+	}
+
+
 	public Person move(Datum d, Adresse a) {
 		addAddressToHistory(a, d);
 		return this;
@@ -47,6 +58,11 @@ public class Person {
 	private Person addAddressToHistory(Adresse adresse, Datum datum) {
 		adressHistorie.put(datum, adresse);
 		return this;
+	}
+
+	@Override
+	public String toString() {
+		return getVorname() + " " + getName() + ", " + getGeburtsdatum().toString() + ", " + getAnschrift().toString();
 	}
 
 	public Person[] getEltern() {
@@ -91,9 +107,9 @@ public class Person {
 	}
 
 	public Person setGeburtsdatum(Datum geburtsdatum) {
-		if (this.geburtsdatum != null) {
+
 			this.geburtsdatum = geburtsdatum;
-		}
+
 		return this;
 		
 	}

@@ -1,18 +1,18 @@
 package Aufgabe2.teil1;
 
 public class Adresse {
+    private int myPLZ = 0;
+    private int myHnr = 0;
+    private String myStrasse = null;
+    private String myStadt = null;
+
     public Adresse(final String strasse, final int hnr, final int PLZ, final String stadt) {
         super();
         this.setPLZ(PLZ).setStadt(stadt).setStrasse(strasse).setHnr(hnr);
     }
 
-    private int    myPLZ     = 0;
-
-    private int    myHnr     = 0;
-
-    private String myStrasse = null;
-
-    private String myStadt   = null;
+    public Adresse() {
+    }
 
     public boolean istStadt(final String stadt) {
         return this.getStadt().equals(stadt);
@@ -28,9 +28,6 @@ public class Adresse {
 
     public boolean istHnr(final int hnr) {
         return this.getHnr() == hnr;
-    }
-
-    public Adresse() {
     }
 
     /**
@@ -106,11 +103,15 @@ public class Adresse {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return this.getStrasse() + " " + this.getHnr() + ", " + this.getPLZ() + " " + this.getStadt();
+    }
+
     public boolean vergleiche(final Adresse other) {
         if (this == other) {
             return true;
-        }
-        else {
+        } else {
             if (this.istPLZ(other.getPLZ())) {
                 if (this.istHnr(other.getHnr())) {
                     if (this.istStadt(other.getStadt())) {
@@ -122,7 +123,7 @@ public class Adresse {
             return false;
         }
     }
-    
+
     public Adresse kopiere() {
         return new Adresse(this.getStrasse(), this.getHnr(), this.getPLZ(), this.getStadt());
     }
