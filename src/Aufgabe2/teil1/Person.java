@@ -1,7 +1,9 @@
 package Aufgabe2.teil1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Person {
 
@@ -21,18 +23,38 @@ public class Person {
 	private final ArrayList<Person> kinder = new ArrayList<>();
 	
 	
-	public Person(Integer id, Integer gewicht, Integer laune, Integer gesundheit, String vorname, String name, Datum geburtsdatum, Boolean lebend, Adresse anschrift, Datum wohnortSeit) {
-		this.setId(id).setGewicht(gewicht).setLaune(laune).setGesundheit(gesundheit).setVorname(vorname).setName(name).setGeburtsdatum(geburtsdatum).setLebend(lebend).setAnschrift(anschrift).setWohnortSeit(wohnortSeit);
+	public Person(final Integer id, final Integer gewicht, final Integer laune, final Integer gesundheit, final String vorname, final String name, final Datum geburtsdatum, final Boolean lebend, final Adresse anschrift, final Datum wohnortSeit) {
+		this.setId(id).setGewicht(gewicht).setLaune(laune).setGesundheit(gesundheit).setVorname(vorname).setName(name).setGeburtsdatum(geburtsdatum).setLebend(lebend).setAnschrift(anschrift, wohnortSeit);
 	}
 
-	public Person(Person person) {
-		this.setId(getId() + 10000).setGewicht(person.getGewicht()).setLaune(person.getLaune()).setGesundheit(person.getGesundheit()).setVorname(person.getVorname()).setName(person.getName()).setGeburtsdatum(person.getGeburtsdatum()).setLebend(person.getLebend()).setAnschrift(person.getAnschrift()).setWohnortSeit(person.getWohnortSeit());
+	public Person(final Integer id, final Integer gewicht, final Integer laune, final Integer gesundheit, final String vorname, final String name, final Datum geburtsdatum, final Boolean lebend) {
+		this.setId(id).setGewicht(gewicht).setLaune(laune).setGesundheit(gesundheit).setVorname(vorname).setName(name).setGeburtsdatum(geburtsdatum).setLebend(lebend);
+	}
+
+	public Person(final Person person) {
+		this.setId(getId() + 10000).setGewicht(person.getGewicht()).setLaune(person.getLaune()).setGesundheit(person.getGesundheit()).setVorname(person.getVorname()).setName(person.getName()).setGeburtsdatum(person.getGeburtsdatum()).setLebend(person.getLebend()).setAnschrift(person.getAnschrift(), person.getWohnortSeit());
 	}
 	
-	public Person setEltern(Person vater, Person mutter) {
+	public Person setEltern(final Person vater, final Person mutter) {
 		eltern[0] = vater;
 		eltern[1] = mutter;
 		return this;
+	}
+
+	@Override
+	public boolean equals(final Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Person)) return false;
+		Person person = (Person) o;
+		return  Objects.equals(getVorname(), person.getVorname()) && Objects.equals(getName(), person.getName()) && Objects.equals(getGeburtsdatum(), person.getGeburtsdatum()) && Objects.equals(getLebend(), person.getLebend());
+	}
+
+	@Override
+	public int hashCode() {
+		int result = Objects.hash(getId(), getGewicht(), getLaune(), getGesundheit(), getVorname(), getName(), getGeburtsdatum(), getLebend(), getAnschrift(), getWohnortSeit(), getAdressHistorie(), getKinder());
+		result = 31 * result + Arrays.hashCode(getEltern());
+		result = 31 * result + Arrays.hashCode(getGrosseltern());
+		return result;
 	}
 
 	public ArrayList<Person> getEnkel() {
@@ -46,7 +68,7 @@ public class Person {
 	}
 
 
-	public Person move(Datum d, Adresse a) {
+	public Person move(final Datum d, final Adresse a) {
 		addAddressToHistory(a, d);
 		return this;
 	}
@@ -55,7 +77,7 @@ public class Person {
 		return adressHistorie;
 	}
 
-	private Person addAddressToHistory(Adresse adresse, Datum datum) {
+	private Person addAddressToHistory(final Adresse adresse, final Datum datum) {
 		adressHistorie.put(datum, adresse);
 		return this;
 	}
@@ -69,7 +91,7 @@ public class Person {
 		return eltern;
 	}
 	
-	public Person setGrosseltern(Person grossvaterVater, Person grossmutterVater, Person grossvaterMutter, Person grossmutterMutter) {
+	public Person setGrosseltern(final Person grossvaterVater, final Person grossmutterVater, final Person grossvaterMutter, final Person grossmutterMutter) {
 		grosseltern[0] = grossvaterVater;
 		grosseltern[1] = grossmutterVater;
 		grosseltern[2] = grossvaterMutter;
@@ -81,7 +103,7 @@ public class Person {
 		return grosseltern;
 	}
 	
-	public Person addKind(Person kind) {
+	public Person addKind(final Person kind) {
 		kinder.add(kind);
 		return this;
 	}
@@ -106,7 +128,7 @@ public class Person {
 		return geburtsdatum;
 	}
 
-	public Person setGeburtsdatum(Datum geburtsdatum) {
+	public Person setGeburtsdatum(final Datum geburtsdatum) {
 
 			this.geburtsdatum = geburtsdatum;
 
@@ -122,7 +144,7 @@ public class Person {
 		return setLebend(false);
 	}
 
-	private Person setLebend(Boolean lebend) {
+	private Person setLebend(final Boolean lebend) {
 		this.lebend = lebend;
 		return this;
 	}
@@ -131,8 +153,9 @@ public class Person {
 		return anschrift;
 	}
 
-	public Person setAnschrift(Adresse anschrift) {
+	public Person setAnschrift(final Adresse anschrift, final Datum wohnortSeit) {
 		this.anschrift = anschrift;
+		setWohnortSeit(wohnortSeit);
 		return this;
 	}
 
@@ -140,12 +163,12 @@ public class Person {
 		return wohnortSeit;
 	}
 
-	public Person setWohnortSeit(Datum wohnortSeit) {
+	private Person setWohnortSeit(final Datum wohnortSeit) {
 		this.wohnortSeit = wohnortSeit;
 		return this;
 	}
 
-	private Person setId(Integer id) {
+	private Person setId(final Integer id) {
 		this.id = id;
 		return this;
 	}
@@ -154,12 +177,12 @@ public class Person {
 		return id;
 	}
 
-	private Person setName(String name) {
+	private Person setName(final String name) {
 		this.name = name;
 		return this;
 	}
 
-	private Person setVorname(String vorname) {
+	private Person setVorname(final String vorname) {
 		this.vorname = vorname;
 		return this;
 	}
@@ -192,7 +215,7 @@ public class Person {
 		return name;
 	}
 
-	public Person setLaune(Integer neuerWert) {
+	public Person setLaune(final Integer neuerWert) {
 		laune = neuerWert;
 		if (laune > 10) {
 			laune = 10;
@@ -207,7 +230,7 @@ public class Person {
 		return laune;
 	}
 
-	public Person setGesundheit(Integer neuerWert) {
+	public Person setGesundheit(final Integer neuerWert) {
 		gesundheit = neuerWert;
 		if (gesundheit > 100) {
 			gesundheit = 100;
@@ -222,7 +245,7 @@ public class Person {
 		return gesundheit;
 	}
 
-	public Person setGewicht(Integer gewicht) {
+	public Person setGewicht(final Integer gewicht) {
 		this.gewicht = gewicht;
 		return this;
 	}

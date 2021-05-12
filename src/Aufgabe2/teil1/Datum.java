@@ -8,7 +8,7 @@ public class Datum {
 	private int monat;
 	private int jahr;
 
-	public Datum(int tag, int monat, int jahr) {
+	public Datum(final int tag, final int monat, final int jahr) {
 		setJahr(jahr);
 		setMonat(monat);
 		setTag(tag);
@@ -25,7 +25,7 @@ public class Datum {
 	}
 
 	@Override
-	public boolean equals(Object o) {
+	public boolean equals(final Object o) {
 		if (this == o) return true;
 		if (!(o instanceof Datum)) return false;
 		Datum datum = (Datum) o;
@@ -62,7 +62,7 @@ public class Datum {
 		return this;
 	}
 
-	public Datum setMonat(int monat) {
+	public Datum setMonat(final int monat) {
 		if (monat < 1) {
 			this.monat = 1;
 		} else if (monat > 12) {
@@ -73,7 +73,7 @@ public class Datum {
 		return this;
 	}
 
-	public Datum setJahr(int jahr) {
+	public Datum setJahr(final int jahr) {
 		this.jahr = jahr;
 		return this;
 	}

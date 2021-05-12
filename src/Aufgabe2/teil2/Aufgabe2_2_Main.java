@@ -21,6 +21,8 @@ public class Aufgabe2_2_Main {
 
         Motorrad drogenSchmuggler = new Motorrad("Suzuki", "KSX3", 459, 2019, 170, new Motor(1246, 5, 80, Treibstoff.ELEKTRO, 200), halter, fahrer, 75);
         System.out.println(drogenSchmuggler.toString());
+        System.out.print("\n\n\n");
+        System.out.println(halter.getFahrzeuge().toString());
 
     }
 }

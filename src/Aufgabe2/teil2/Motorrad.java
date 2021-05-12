@@ -7,6 +7,7 @@ public class Motorrad extends Fahrzeug {
     public Motorrad(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer, final int drogenInKG) {
         super(hersteller, modell, gesamtgewicht, baujahr, hoechstgeschwindigkeit, motor, halter, fahrer);
         setGeladeneDrogeninKG(drogenInKG);
+        getHalter().addFahrzeug(this);
     }
 
 

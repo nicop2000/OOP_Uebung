@@ -8,7 +8,7 @@ public class Datum {
     private int monat;
     private int jahr;
 
-    public Datum(int tag, int monat, int jahr) {
+    public Datum(final int tag, final int monat, final int jahr) {
         setJahr(jahr);
         setMonat(monat);
         setTag(tag);
@@ -33,7 +33,7 @@ public class Datum {
         return Objects.hash(getTag(), getMonat(), getJahr());
     }
 
-    public Datum setTag(int tag) {
+    public Datum setTag(final int tag) {
         if (tag < 1) {
             this.tag = 1;
         } else if (tag > 31) {
@@ -58,7 +58,7 @@ public class Datum {
         return this;
     }
 
-    public Datum setMonat(int monat) {
+    public Datum setMonat(final int monat) {
         if (monat < 1) {
             this.monat = 1;
         } else if (monat > 12) {
@@ -69,7 +69,7 @@ public class Datum {
         return this;
     }
 
-    public Datum setJahr(int jahr) {
+    public Datum setJahr(final int jahr) {
         this.jahr = jahr;
         return this;
     }

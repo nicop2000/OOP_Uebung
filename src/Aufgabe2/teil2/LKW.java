@@ -9,6 +9,7 @@ public class LKW extends Fahrzeug {
     public LKW(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer, final List<String> ladung) {
         super(hersteller, modell, gesamtgewicht, baujahr, hoechstgeschwindigkeit, motor, halter, fahrer);
         setLadung(ladung);
+        getHalter().addFahrzeug(this);
     }
 
     public List<String> getLadung() {

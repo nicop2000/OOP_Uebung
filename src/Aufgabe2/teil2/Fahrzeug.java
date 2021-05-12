@@ -13,6 +13,7 @@ public abstract class  Fahrzeug {
 
     protected Fahrzeug(final String hersteller, final String modell, final Integer gesamtgewicht, final Integer baujahr, final Integer hoechstgeschwindigkeit, final Motor motor, final Fahrzeughalter halter, final Fahrer fahrer) {
         setHersteller(hersteller).setModell(modell).setGesamtgewicht(gesamtgewicht).setBaujahr(baujahr).setHoechstgeschwindigkeit(hoechstgeschwindigkeit).setMotor(motor).setHalter(halter).setFahrer(fahrer);
+
     }
 
     public String getHersteller() {

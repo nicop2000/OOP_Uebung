@@ -10,6 +10,7 @@ public class Motor {
 
     public Motor(final Integer hubraum, final Integer zyliner, final Integer leistung, final Treibstoff treibstoff, final Integer gewicht) {
         setHubraum(hubraum).setZyliner(zyliner).setLeistung(leistung).setTreibstoff(treibstoff).setGewicht(gewicht);
+
     }
 
     public Integer getHubraum() {
